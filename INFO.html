@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+</head>
+<body>
+    <h2>Данные пользователя</h2>
+    <p><strong>Email:</strong> <span id="userEmail"></span></p>
+    <p><strong>Password: </strong> <span id="userPassword"></span></p>
+
+    <script>
+        const email = localStorage.getItem("userEmail");
+        const password = localStorage.getItem("userPassword");
+
+        if (!email || !password){
+            document.body.innerHTML = "<p>Нет данных. Пожалуйста, зарегистрируйтесь сначала.</p>";
+        } else {
+            document.getElementById("userEmail").textContent = email;
+            document.getElementById("userPassword").textContent = password;
+        }
+    </script>
+</body>
+</html>
